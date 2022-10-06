@@ -205,3 +205,39 @@ const factorial = (num) => {
 };
 
 factorial(5);
+
+
+
+/*
+  Ejercicio 12:
+
+  Programa una función que determine si un número es primo 
+  (aquel que solo es divisible por sí mismo y 1) o no, pe. 
+  miFuncion(7) devolverá true.
+*/
+
+const primeNumber = (num = undefined) => {
+  if (num === undefined) return 'You did not enter a number';
+
+  if (typeof num !== 'number') return `El valor '${num}'
+  no es un número`;
+
+  if (num === 0 || Math.sign(num) === -1 || num === 1) {
+    return 'The number cannot be 0, 1 or negative.';
+  }
+
+  let divisible = false;
+
+  for (i = 2; i < num; i++) {
+    if (num % i === 0) {
+      divisible = true;
+      break;
+    }
+  }
+  return divisible
+    ? `The number ${num}, is not prime.`
+    : `The number ${num}, is prime.`;
+};
+
+primeNumber(7);
+
